@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:52:08 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/16 14:52:08 by sawang           ###   ########.fr       */
+/*   Updated: 2023/11/17 16:42:58 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ ScalerConverter::ScalerConverter()
 
 ScalerConverter::ScalerConverter(ScalerConverter const &cpy)
 {
-	void (cpy);
+	(void)cpy;
 }
 
 ScalerConverter &ScalerConverter::operator=(ScalerConverter const &rhs)
 {
 	if (this != &rhs)
 	{
-		void (rhs);
+		(void)rhs;
 	}
 	return (*this);
 }
@@ -42,9 +42,13 @@ void	ScalerConverter::convert(std::string str)
 		Input::_convertPseudo();
 	else
 	{
-		std::cout << "char: " << char(input) << std::endl;
-		std::cout << "int: " << int(input) << std::endl;
-		std::cout << "float: " << float(input) << std::endl;
-		std::cout << "double: " << double(input) << std::endl;
+		std::cout << "char: ";
+		Input::_toChar();
+		std::cout << "int: ";
+		Input::_toInt();
+		std::cout << "float: ";
+		Input::_toFloat();
+		std::cout << "double: ";
+		Input::_toDouble();
 	}
 }
