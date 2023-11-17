@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:01:48 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/17 17:01:35 by sawang           ###   ########.fr       */
+/*   Updated: 2023/11/17 19:14:10 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Input
 		Input &operator=(Input const &rhs);
 		Input(Input const &cpy);
 		//parser
-		static eType	_parseInput(std::string str);
+		static eType	_parseInput(std::string &str);
 		static void	_trimWhiteSpace(std::string &str);
 		static bool	_parsePseudo(std::string str);
 		static bool	_parseChar(std::string str);

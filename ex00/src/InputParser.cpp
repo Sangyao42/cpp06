@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:51:43 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/17 17:31:41 by sawang           ###   ########.fr       */
+/*   Updated: 2023/11/17 19:14:29 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	Input::_trimWhiteSpace(std::string &str)
 		str = str.substr(start, end - start + 1);
 }
 //parser
-eType	Input::_parseInput(std::string str)
+eType	Input::_parseInput(std::string &str)
 {
 	eType type;
 
