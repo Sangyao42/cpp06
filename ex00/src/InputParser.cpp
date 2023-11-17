@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:51:43 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/17 19:14:29 by sawang           ###   ########.fr       */
+/*   Updated: 2023/11/17 19:20:33 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ bool	Input::_parsePseudo(std::string str)
 
 bool	Input::_parseChar(std::string str)
 {
-	return (str.length() == 1);
+	return (str.length() == 1 && !isdigit(str[0]));
 }
 
 bool	Input::_parseInt(std::string str)
