@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 21:27:52 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/17 21:58:57 by sawang           ###   ########.fr       */
+/*   Updated: 2023/11/17 22:04:53 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	identify(Base &p)
 			std::cout << "B" << std::endl;
 			return ;
 		}
-		catch(const std::exception& e)
+		catch(const std::bad_cast &e)
 		{
 			try
 			{
