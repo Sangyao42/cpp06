@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:01:48 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/17 19:14:10 by sawang           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:12:04 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,9 @@ class Input
 		Input();
 		Input &operator=(Input const &rhs);
 		Input(Input const &cpy);
+		~Input();
 		//parser
-		static eType	_parseInput(std::string &str);
+
 		static void	_trimWhiteSpace(std::string &str);
 		static bool	_parsePseudo(std::string str);
 		static bool	_parseChar(std::string str);
@@ -45,13 +46,10 @@ class Input
 		static bool	_parseDouble(std::string str);
 
 	public:
-		static std::string _inputStr;
+		static std::string	_inputStr;
 		static eType		_inputType;
 
-		Input(std::string str);
-		~Input();
-		//exception: in private or public?
-
+		static eType	_parseInput(std::string &str);
 		//convert and print
 		static void	_convertPseudo(void);
 		static void	_toChar(void);

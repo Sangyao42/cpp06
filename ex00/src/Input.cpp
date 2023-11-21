@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:48:40 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/17 17:25:06 by sawang           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:12:26 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,6 @@ Input::~Input()
 
 std::string Input::_inputStr = "";
 eType		Input::_inputType = UNKNOWN;
-
-//user-defined constructor
-Input::Input(std::string str)
-{
-	_inputStr= str;
-	_inputType = _parseInput(_inputStr);
-}
 
 const char *Input::InputInvalidException::what() const throw()
 {

@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:52:08 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/17 16:42:58 by sawang           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:11:35 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ ScalerConverter::~ScalerConverter()
 // convert
 void	ScalerConverter::convert(std::string str)
 {
-	Input input(str);
+	Input::_inputStr = str;
+	Input::_inputType = Input::_parseInput(Input::_inputStr);
 	if (Input::_inputType == PSEUDO)
 		Input::_convertPseudo();
 	else

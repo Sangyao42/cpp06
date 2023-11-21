@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:07:38 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/17 17:32:43 by sawang           ###   ########.fr       */
+/*   Updated: 2023/11/21 15:05:39 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,18 @@ void	Input::_toChar(void)
 	{
 		case (CHAR):
 			if ( _inputStr[0] < std::numeric_limits<char>::min() || _inputStr[0] > std::numeric_limits<char>::max())
-				std::cerr << "impossible" << std::endl;
+				std::cout << "impossible" << std::endl;
 			else if (_inputStr[0] < 32 && _inputStr[0] >= std::numeric_limits<char>::min())
-				std::cerr << "Non displayable" << std::endl;
+				std::cout << "Non displayable" << std::endl;
 			else
 				std::cout << _inputStr[0] << std::endl;
 			break;
 		case (INT): {
 			int i = atoi(_inputStr.c_str());
 			if (i < std::numeric_limits<char>::min() || i > std::numeric_limits<char>::max())
-				std::cerr << "impossible" << std::endl;
+				std::cout << "impossible" << std::endl;
 			else if (i < 32 && i >= std::numeric_limits<char>::min())
-				std::cerr << "Non displayable" << std::endl;
+				std::cout << "Non displayable" << std::endl;
 			else
 				std::cout << static_cast<char>(i) << std::endl;
 			break;
@@ -54,9 +54,9 @@ void	Input::_toChar(void)
 		case (FLOAT): {
 			float f = strtof(_inputStr.c_str(), NULL);
 			if (f < std::numeric_limits<char>::min() || f > std::numeric_limits<char>::max())
-				std::cerr << "impossible" << std::endl;
+				std::cout << "impossible" << std::endl;
 			else if (f < 32 && f >= std::numeric_limits<char>::min())
-				std::cerr << "Non displayable" << std::endl;
+				std::cout << "Non displayable" << std::endl;
 			else
 				std::cout << static_cast<char>(f) << std::endl;
 			break;
@@ -64,9 +64,9 @@ void	Input::_toChar(void)
 		case (DOUBLE): {
 			double d = strtod(_inputStr.c_str(), NULL);
 			if (d < std::numeric_limits<char>::min() || d > std::numeric_limits<char>::max())
-				std::cerr << "impossible" << std::endl;
+				std::cout << "impossible" << std::endl;
 			else if (d < 32 && d >= std::numeric_limits<char>::min())
-				std::cerr << "Non displayable" << std::endl;
+				std::cout << "Non displayable" << std::endl;
 			else
 				std::cout << static_cast<char>(d) << std::endl;
 			break;
@@ -90,7 +90,7 @@ void	Input::_toInt(void)
 		case (FLOAT): {
 			float f = strtof(_inputStr.c_str(), NULL);
 			if (f < std::numeric_limits<int>::min() || f > std::numeric_limits<int>::max())
-				std::cerr << "impossible" << std::endl;
+				std::cout << "impossible" << std::endl;
 			else
 				std::cout << static_cast<int>(f) << std::endl;
 			break;
@@ -98,7 +98,7 @@ void	Input::_toInt(void)
 		case (DOUBLE): {
 			double d = strtod(_inputStr.c_str(), NULL);
 			if (d < std::numeric_limits<int>::min() || d > std::numeric_limits<int>::max())
-				std::cerr << "impossible" << std::endl;
+				std::cout << "impossible" << std::endl;
 			else
 				std::cout << static_cast<int>(d) << std::endl;
 			break;
@@ -124,7 +124,7 @@ void	Input::_toFloat(void)
 			break;
 		case (DOUBLE):
 			if (strtod(_inputStr.c_str(), NULL) < -std::numeric_limits<float>::max() || strtod(_inputStr.c_str(), NULL) > std::numeric_limits<float>::max())
-				std::cerr << "impossible" << std::endl;
+				std::cout << "impossible" << std::endl;
 			else
 				std::cout << std::fixed << std::setprecision(1) << static_cast<float>(strtod(_inputStr.c_str(), NULL)) << 'f' << std::endl;
 			break;
