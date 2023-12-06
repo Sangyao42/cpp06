@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:51:43 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/21 15:13:24 by sawang           ###   ########.fr       */
+/*   Updated: 2023/12/06 21:39:10 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ bool	Input::_parseFloat(std::string str)
 		i++;
 	if (str[i])
 		return (false);
-	long double checker = strtold(str.c_str(), NULL);
+	double checker = strtod(str.c_str(), NULL);
 	if (checker < -std::numeric_limits<float>::max() || checker > std::numeric_limits<float>::max())
 		return (false);
 	else
@@ -118,9 +118,12 @@ bool Input::_parseDouble(std::string str)
 		i++;
 	if (str[i])
 		return (false);
-	long double checker = strtold(str.c_str(), NULL);
-	if (checker < -std::numeric_limits<double>::max() || checker > std::numeric_limits<double>::max())
+	double checker = strtod(str.c_str(), NULL);
+	(void)checker;
+	if (errno == ERANGE)
 		return (false);
+	// if (checker < -std::numeric_limits<double>::max() || checker > std::numeric_limits<double>::max())
+	// 	return (false);
 	else
 		return (true);
 }
