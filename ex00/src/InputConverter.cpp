@@ -6,11 +6,12 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:07:38 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/21 15:05:39 by sawang           ###   ########.fr       */
+/*   Updated: 2023/12/16 18:32:32 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Input.hpp"
+#include <stdlib.h>
 
 void	Input::_convertPseudo(void)
 {
@@ -52,7 +53,7 @@ void	Input::_toChar(void)
 			break;
 		}
 		case (FLOAT): {
-			float f = strtof(_inputStr.c_str(), NULL);
+			float f = atof(_inputStr.c_str());
 			if (f < std::numeric_limits<char>::min() || f > std::numeric_limits<char>::max())
 				std::cout << "impossible" << std::endl;
 			else if (f < 32 && f >= std::numeric_limits<char>::min())
@@ -88,7 +89,7 @@ void	Input::_toInt(void)
 			std::cout << atoi(_inputStr.c_str()) << std::endl;
 			break;
 		case (FLOAT): {
-			float f = strtof(_inputStr.c_str(), NULL);
+			float f = atof(_inputStr.c_str());
 			if (f < std::numeric_limits<int>::min() || f > std::numeric_limits<int>::max())
 				std::cout << "impossible" << std::endl;
 			else
@@ -120,7 +121,7 @@ void	Input::_toFloat(void)
 			std::cout << std::fixed << std::setprecision(1) << static_cast<float>(atoi(_inputStr.c_str())) << "f" << std::endl;
 			break;
 		case (FLOAT):
-			std::cout << std::fixed << std::setprecision(1) << strtof(_inputStr.c_str(), NULL) << 'f' << std::endl;
+			std::cout << std::fixed << std::setprecision(1) << atof(_inputStr.c_str()) << 'f' << std::endl;
 			break;
 		case (DOUBLE):
 			if (strtod(_inputStr.c_str(), NULL) < -std::numeric_limits<float>::max() || strtod(_inputStr.c_str(), NULL) > std::numeric_limits<float>::max())
@@ -145,7 +146,7 @@ void	Input::_toDouble(void)
 			std::cout << std::fixed << std::setprecision(1) << static_cast<double>(atoi(_inputStr.c_str())) << std::endl;
 			break;
 		case (FLOAT):
-			std::cout << std::fixed << std::setprecision(1) << static_cast<double>(strtof(_inputStr.c_str(), NULL)) << std::endl;
+			std::cout << std::fixed << std::setprecision(1) << static_cast<double>(atof(_inputStr.c_str())) << std::endl;
 			break;
 		case (DOUBLE):
 			std::cout << std::fixed << std::setprecision(1) << strtod(_inputStr.c_str(), NULL) << std::endl;
