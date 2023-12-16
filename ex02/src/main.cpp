@@ -6,7 +6,7 @@
 /*   By: sawang <sawang@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 21:27:52 by sawang            #+#    #+#             */
-/*   Updated: 2023/11/17 22:04:53 by sawang           ###   ########.fr       */
+/*   Updated: 2023/12/16 18:25:40 by sawang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 Base *generate(void)
 {
+	srand(time(NULL));
 	int i = rand() % 3;
 	if (i == 0)
 	{
